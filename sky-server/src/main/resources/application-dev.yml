@@ -6,3 +6,8 @@ sky:
     database: sky_take_out
     username: luotovo
     password: Lt586826@
+  alioss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    access-key-id: LTAI5tHuhnSmQFkxbFtS6J5V
+    access-key-secret: p6M9bLxm0VGl8uL2iA0JFHrzonwpYI
+    bucket-name: java-luot
