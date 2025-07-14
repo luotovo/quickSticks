@@ -2,7 +2,6 @@ package com.sky.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.page.PageMethod;
 import com.sky.constant.MessageConstant;
 import com.sky.constant.StatusConstant;
 import com.sky.dto.DishDTO;
@@ -17,13 +16,11 @@ import com.sky.result.PageResult;
 import com.sky.service.DishService;
 import com.sky.vo.DishVO;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.poi.sl.usermodel.MasterSheet;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Arrays;
 import java.util.List;
 @Service
 @Slf4j
@@ -113,6 +110,9 @@ public class DishServiceImpl implements DishService {
         dishMapper.deleteByIds(ids);
         dishFlavorMapper.deleteByDishIds(ids);
     }
+    /*
+    * 根据id查询菜品数据
+     */
 
     @Override
     public DishVO getByIdWithhFlavor(Long id) {
@@ -127,6 +127,9 @@ public class DishServiceImpl implements DishService {
         return dishVO;
 
     }
+    /*
+    * 修改菜品
+     */
     @Transactional
     @Override
     public void updateWithFlavor(DishDTO dishDTO) {
@@ -148,4 +151,64 @@ public class DishServiceImpl implements DishService {
         }
 
     }
+    /*
+    * 根据分类id查询菜品
+     */
+
+    @Override
+    public List<Dish> list(Long categoryId) {
+        return dishMapper.list(categoryId);
+
+    }
+
+    @Override
+    public void startOrStop(Integer status, Long id) {
+        if(status== StatusConstant.ENABLE){
+            List<Dish> list = dishMapper.list(id);
+            if(list != null && list.size() > 0){
+                list.forEach(dish->{
+                    if(dish.getStatus() == StatusConstant.DISABLE){
+                        throw new DeletionNotAllowedException(MessageConstant.DISH_ON_SALE);
+                    }
+                });
+            }
+        }
+        Dish dish = Dish.builder()
+                .id(id)
+                .status(status)
+                .build();
+                dishMapper.update(dish);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -29,6 +29,7 @@
         </where>
         order by d.create_time desc
     </select>
+
     <update id="update">
     update dish
         <set>
@@ -52,4 +53,7 @@
         where id = #{id}
 
     </update>
+    <select id="list" resultType="com.sky.entity.Dish">
+    select * from dish where status = 1 and category_id = #{categoryId}
+    </select>
 </mapper>
