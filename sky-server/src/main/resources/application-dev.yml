@@ -11,3 +11,7 @@ sky:
     access-key-id: LTAI5tM5kmuXk7Qf6WziC39B
     access-key-secret: yVklvQTGFvVSBHWjqeHicuw9TZHe3K
     bucket-name: java-luot
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
