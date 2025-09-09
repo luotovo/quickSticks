@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.sky.WebSockert.WebSocketServer;
 import com.sky.constant.MessageConstant;
 import com.sky.context.BaseContext;
 import com.sky.dto.*;
@@ -53,6 +54,8 @@ public class OrderServiceImpl implements OrderService {
     private WeChatPayUtil weChatPayUtil;
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private WebSocketServer webSocketServer;
 
 
     private static final String shopAddress ="Hutb";
@@ -173,6 +176,15 @@ public class OrderServiceImpl implements OrderService {
                 .build();
 
         orderMapper.update(orders);
+
+        //通过websocket发送消息给客户端 type orderid content
+        Map map = new HashMap();
+        map.put("type", 1);//1表示来单提醒，2表示客户催单
+        map.put("orderId", ordersDB.getId());//订单id
+        map.put("content", "来单提醒:"+outTradeNo);
+
+        String json = JSON.toJSONString(map);
+        webSocketServer.sendToAllClient(json);
     }
 
     @Override
@@ -414,6 +426,26 @@ public class OrderServiceImpl implements OrderService {
                 .deliveryTime(LocalDateTime.now())
                 .build();
                 orderMapper.update(orders);
+    }
+
+    @Override
+    public void reminder(Long id) {
+        //根据id查询订单
+        Orders ordersDB = orderMapper.getById(id);
+        //校验订单是否存在，订单状态是否
+        if(ordersDB == null){
+            throw new OrderBusinessException
+                    (MessageConstant.ORDER_NOT_FOUND);
+        }
+        Map map = new HashMap();
+        map.put("type",2);//1表示来单提醒，2表示订单催单
+        map.put("orderId",id);
+        map.put("content","订单号："+ordersDB.getNumber());
+
+        String json = JSON.toJSONString(map);
+
+
+        webSocketServer.sendToAllClient(json);
     }
 
     private List<OrderVO> getOrderVOList(Page<Orders> page) {
