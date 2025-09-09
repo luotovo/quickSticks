@@ -55,6 +55,20 @@
     <select id="countStatus" resultType="java.lang.Integer">
         select count(id) from orders where status = #{status}
     </select>
+    <select id="sumByMap" resultType="java.lang.Double">
+        select sum( amount) from orders
+        <where>
+            <if test="begin">
+                and order_time &gt;= #{begin}
+            </if>
+            <if test="end">
+                and order_time &lt;= #{end}
+            </if>
+            <if test="status">
+                and status = #{status}
+            </if>
+        </where>
+    </select>
 
 
 </mapper>
