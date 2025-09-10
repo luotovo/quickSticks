@@ -58,16 +58,44 @@
     <select id="sumByMap" resultType="java.lang.Double">
         select sum( amount) from orders
         <where>
-            <if test="begin">
+            <if test="begin != null">
                 and order_time &gt;= #{begin}
             </if>
-            <if test="end">
-                and order_time &lt;= #{end}
+            <if test="end != null">
+                and  order_time &lt;= #{end}
             </if>
-            <if test="status">
+            <if test="status!= null">
                 and status = #{status}
             </if>
         </where>
+    </select>
+    <select id="countByMap" resultType="java.lang.Integer">
+        select count(id) from orders
+        <where>
+            <if test="begin != null">
+                and order_time &gt;= #{begin}
+            </if>
+            <if test="end != null">
+                and order_time &lt;= #{end}
+            </if>
+            <if test="status!= null">
+                and status = #{status}
+            </if>
+        </where>
+    </select>
+    <select id="getSalesTop10" resultType="com.sky.dto.GoodsSalesDTO">
+        SELECT od.name, sum(od.number) AS number
+        FROM orders o, order_detail od
+        WHERE o.id = od.order_id AND o.status = 5
+        <if test="begin != null">
+            and o.order_time &gt;= #{begin}
+        </if>
+        <if test="end != null">
+            and o.order_time &lt;= #{end}
+        </if>
+        GROUP BY od.name
+        ORDER BY number DESC
+        LIMIT 0,10
     </select>
 
 
