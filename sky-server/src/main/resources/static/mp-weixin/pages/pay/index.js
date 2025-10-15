@@ -204,19 +204,8 @@ var _api = __webpack_require__(/*! @/pages/api/api.js */ 24);function ownKeys(ob
   onLoad: function onLoad(options) {
     this.orderId = options.orderId;
   },
-  methods: _objectSpread(_objectSpread({}, 
+  methods: _objectSpread(_objectSpread({},
   (0, _vuex.mapState)(['orderData'])), {}, {
-    // 显示收款码
-    showQRCode: function showQRCode() {
-      var _this = this;
-      // 模拟获取收款码图片（实际项目中应该从服务器获取）
-      // 这里假设收款码图片已经放在static目录下
-      wx.previewImage({
-        current: '../../static/qrcode.jpg', // 当前显示图片的http链接
-        urls: ['../../static/qrcode.jpg'] // 需要预览的图片http链接列表
-      });
-    },
-    
     // 确认支付（用户扫码后点击此按钮）
     confirmPayment: function confirmPayment() {
       var _this = this;
@@ -243,29 +232,6 @@ var _api = __webpack_require__(/*! @/pages/api/api.js */ 24);function ownKeys(ob
           })
         }
       });
-    },
-    
-    // 支付详情
-    handleSave: function handleSave() {var _this = this;
-      if (this.timeout) {
-        (0, _api.cancelOrder)(this.orderId).then(function (res) {
-        });
-        uni.redirectTo({
-          url: '/pages/details/index?orderId=' + this.orderId });
-
-      } else {
-        // 显示扫码支付提示
-        wx.showModal({
-          title: '扫码支付',
-          content: '请扫描商家收款码进行支付',
-          showCancel: false,
-          success: function() {
-            // 显示收款码
-            _this.showQRCode();
-          }
-        });
-      }
-
     },
     // // 订单倒计时
     runTimeBack: function runTimeBack() {
