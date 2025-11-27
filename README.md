@@ -1,4 +1,6 @@
-# 筷 点来 完整实战项目
+
+
+# 筷点来 · 外卖系统完整实战
 
 > 前后端分离 · 微信登录+支付 · WebSocket 实时推送 · Docker 一键部署  
 > 2024.10–2025.01 独立完成 · 2000+ 行真实代码
@@ -50,7 +52,10 @@ quickSticks/
 ├─ docker-compose.yml
 └─ README.md
 
-部分运行图片<img width="357" height="762" alt="29a8da0cca1859d121f32c034bd6d3a4" src="https://github.com/user-attachments/assets/77f9d9b9-f46e-4d0d-9058-b4303dfa7d9d" />
+
+部分运行图片
+
+<img width="357" height="762" alt="29a8da0cca1859d121f32c034bd6d3a4" src="https://github.com/user-attachments/assets/77f9d9b9-f46e-4d0d-9058-b4303dfa7d9d" />
 <img width="366" height="676" alt="f3079d74d0cb49d74219b68c73d647ff" src="https://github.com/user-attachments/assets/5ac0aab9-3af1-4d70-acef-cd7b9bb51225" />
 <img width="349" height="760" alt="b490e7f3f9e2ea742c8122956d5de480" src="https://github.com/user-attachments/assets/8e9397c5-b771-4b<img width="358" height="731" alt="d9e0fde377bd8603c62fefcbf4ef2284" src="https://github.com/user-attachments/assets/d2c64fe3-5224-451e-ac0d-424ccba873f5" />
 ab-9fdd-e13e2f93c1c4" />
