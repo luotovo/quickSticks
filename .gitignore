@@ -1,6 +1,47 @@
-**/target/
-.idea
+# ================= Maven =================
+target/
+*/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+dependency-reduced-pom.xml
+*.war
+*.ear
+
+# ================= IDEA =================
+.idea/
+*.iws
 *.iml
+*.ipr
+out/
+.sky/
+
+# ================= 本地配置文件（最重要）=================
+# 所有环境的本地配置都不要提交
+src/main/resources/application-dev.yml
+src/main/resources/application-local.yml
+src/main/resources/application-prod.yml
+src/main/resources/application-test.yml
+src/main/resources/application-*.yml
+
+# 微信支付私钥、证书（ resources 目录）
+src/main/resources/apiclient_*.pem
+src/main/resources/*.p12
+src/main/resources/*.pfx
+src/main/resources/*.key
+
+# ================= 日志、临时文件 =================
+*.log
+*.tmp
+*.cache
+.DS_Store
+Thumbs.db
+
+# ================= 测试 =================
+src/test/
+test-output/
+
+# ================= 其他 =================
 *.class
-*Test.java
-**/test/
+.docker/
