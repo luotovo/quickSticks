@@ -1,23 +1,23 @@
 sky:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    host: localhost
+    host: 
     port: 3306
-    database: sky_take_out
-    username: luotovo
-    password: Lt586826@
+    database: 
+    username: 
+    password:
   alioss:
-    endpoint: oss-cn-beijing.aliyuncs.com
-    access-key-id: LTAI5tM5kmuXk7Qf6WziC39B
-    access-key-secret: yVklvQTGFvVSBHWjqeHicuw9TZHe3K
+    endpoint: 
+    access-key-id: 
+    access-key-secret: 
     bucket-name: java-luot
   redis:
-    host: localhost
+    host: 
     port: 6379
     database: 0
   wechat:
-    appid: wxd2e9173d494c308f
-    secret: f5181e1582ba9919250ea9fedc9caddc
+    appid: 
+    secret: 
     mchid:
     mcSerialNo:
     private-key-file-path:
