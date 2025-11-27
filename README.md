@@ -3,7 +3,7 @@
 > 前后端分离 · 微信登录+支付 · WebSocket 实时推送 · Docker 一键部署  
 > 2024.10–2025.01 独立完成 · 2000+ 行真实代码
 
-![动态 Banner](https://socialify.git.ci/luotovo/quickSticks/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&language=1&name=1&owner=1&pattern=Chart&pulls=1&stargazers=1&theme=Dark)
+![Java Banner](https://socialify.git.ci/luotovo/quickSticks/image?font=Source%20Code%20Pro&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto&description=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2Fgithub%2Fexplore%2Fmain%2Ftopics%2Fjava%2Fjava.png&background=%23FF6F00)
 
 ## ✨ 核心功能
 
