@@ -55,9 +55,10 @@ quickSticks/
 
 部分运行图片
 
-<img width="357" height="762" alt="29a8da0cca1859d121f32c034bd6d3a4" src="https://github.com/user-attachments/assets/77f9d9b9-f46e-4d0d-9058-b4303dfa7d9d" />
-<img width="366" height="676" alt="f3079d74d0cb49d74219b68c73d647ff" src="https://github.com/user-attachments/assets/5ac0aab9-3af1-4d70-acef-cd7b9bb51225" />
-<img width="349" height="760" alt="b490e7f3f9e2ea742c8122956d5de480" src="https://github.com/user-attachments/assets/8e9397c5-b771-4b<img width="358" height="731" alt="d9e0fde377bd8603c62fefcbf4ef2284" src="https://github.com/user-attachments/assets/d2c64fe3-5224-451e-ac0d-424ccba873f5" />
-ab-9fdd-e13e2f93c1c4" />
-<img width="347" height="752" alt="62501b52cf8dc80378af0fc149e94677" src="https://github.com/user-attachments/assets/15ca1211-9625-4516-bc0f-c99e834a5ff6" />
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/436a20d2-b46f-4f6e-a908-5fee9b4e2bba" width="48%" alt="用户端下单"/>
+  <img src="https://github.com/user-attachments/assets/d58e810a-8271-4084-8115-6341b77c64a9" width "48%" alt="管理端订单"/>
+  <img src="https://github.com/user-attachments/assets/183e8a42-14d7-4ad9-83d9-95ed3f5de588" width="48%" alt="购物车"/>
+  <img src="https://github.com/user-attachments/assets/186d122b-da89-4228-bcc1-e66bb0b22586" width="48%" alt="数据统计"/>
+</div>
 
